@@ -44,7 +44,7 @@ app.disable('x-powered-by');
 
 app.set('trust proxy', true);
 
-app.get('/api', (req, res) => res.json({ status: 'success', message: 'Welcome to the Online SEMA Dashboard API!!!' }));
+app.get('/api', (req, res) => res.json({ status: 'success', message: 'Welcome to the PDF-converter API!!!' }));
 
 app.use('/api/pdfFileConverter', routes.pdfFileConverter);
 
