@@ -12,7 +12,7 @@ const awsS3 = new AWS.S3({
   secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
 });
 
-const localInterviewStorage = multer.diskStorage({
+const localPdfStorage = multer.diskStorage({
   destination: function (req, file, cb) {
     const finalDirectory = 'pdfFileConversion';
     file.uploadedAt = Date.now();
@@ -21,7 +21,7 @@ const localInterviewStorage = multer.diskStorage({
     cb(null, storagelocation);
   },
   filename: function (req, file, cb) {
-    cb(null, `${file.originalname}`);
+    cb(null, `input.pdf`);
   },
 });
 
@@ -40,4 +40,4 @@ const AWSReportStorage = (contentDisposition = 'inline') =>
     },
   });
 
-export { localInterviewStorage, AWSReportStorage };
+export { localPdfStorage, AWSReportStorage };

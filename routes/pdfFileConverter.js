@@ -2,9 +2,9 @@ import { Router } from 'express';
 import multer from 'multer';
 import { pdfEncrypt } from '../controller/pdfFileConverter';
 
-import { localInterviewStorage } from '../helpers/multer/multerStorage';
+import { localPdfStorage } from '../helpers/multer/multerStorage';
 
-const pdfUpload = multer({ storage: localInterviewStorage });
+const pdfUpload = multer({ storage: localPdfStorage });
 
 const router = Router();
 
